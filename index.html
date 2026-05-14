@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Neo Physis: sección CTA con formulario para investigadores, estudiantes y divulgadores científicos." />
+  <title>Neo Physis | CTA y Formulario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sección independiente, lista para incrustar en una landing page completa -->
+  <main>
+    <section class="neo-physis-cta" id="neo-physis-cta" aria-labelledby="neo-physis-cta-title">
+      <div class="neo-physis-cta__orb neo-physis-cta__orb--one" aria-hidden="true"></div>
+      <div class="neo-physis-cta__orb neo-physis-cta__orb--two" aria-hidden="true"></div>
+      <div class="neo-physis-cta__grid" aria-hidden="true"></div>
+
+      <div class="neo-physis-cta__container">
+        <div class="neo-physis-cta__content">
+          <span class="neo-physis-cta__eyebrow">Neo Physis · Ciencia colaborativa</span>
+
+          <h1 class="neo-physis-cta__title" id="neo-physis-cta-title">
+            Impulsa la biotecnología que transformará el Eje Cafetero
+          </h1>
+
+          <p class="neo-physis-cta__description">
+            Conecta tu conocimiento con una comunidad que publica artículos científicos,
+            comparte investigaciones y activa proyectos colaborativos con impacto real en
+            innovación, salud y sostenibilidad.
+          </p>
+
+          <div class="neo-physis-cta__actions">
+            <a class="neo-physis-cta__button neo-physis-cta__button--primary" href="#neo-physis-form">
+              Registrarme ahora
+            </a>
+            <a class="neo-physis-cta__button neo-physis-cta__button--secondary" href="#neo-physis-benefits">
+              Ver beneficios
+            </a>
+          </div>
+
+          <div class="neo-physis-cta__benefits" id="neo-physis-benefits" aria-label="Beneficios de Neo Physis">
+            <article class="neo-physis-cta__benefit-card">
+              <span class="neo-physis-cta__benefit-value">+120</span>
+              <p class="neo-physis-cta__benefit-text">investigadores y estudiantes conectados</p>
+            </article>
+            <article class="neo-physis-cta__benefit-card">
+              <span class="neo-physis-cta__benefit-value">24/7</span>
+              <p class="neo-physis-cta__benefit-text">acceso a publicaciones y propuestas</p>
+            </article>
+            <article class="neo-physis-cta__benefit-card">
+              <span class="neo-physis-cta__benefit-value">100%</span>
+              <p class="neo-physis-cta__benefit-text">enfoque científico, colaborativo y moderno</p>
+            </article>
+          </div>
+
+          <footer class="neo-physis-cta__footer">
+            <p>Neo Physis · Publica, colabora y acelera la ciencia que nace en nuestra región.</p>
+          </footer>
+        </div>
+
+        <div class="neo-physis-form-card">
+          <div class="neo-physis-form-card__header">
+            <span class="neo-physis-form-card__tag">Acceso rápido</span>
+            <h2 class="neo-physis-form-card__title">Únete a la comunidad científica</h2>
+            <p class="neo-physis-form-card__text">
+              Completa el formulario y comparte tu idea, línea de investigación o propuesta de colaboración.
+            </p>
+          </div>
+
+          <form class="neo-physis-form" id="neo-physis-form" novalidate>
+            <div class="neo-physis-form__grid">
+              <div class="neo-physis-form__field">
+                <label class="neo-physis-form__label" for="name">Nombre completo</label>
+                <input class="neo-physis-form__input" type="text" id="name" name="name" placeholder="Tu nombre y apellido" required minlength="3" autocomplete="name" />
+                <span class="neo-physis-form__feedback" aria-live="polite"></span>
+              </div>
+
+              <div class="neo-physis-form__field">
+                <label class="neo-physis-form__label" for="email">Correo electrónico</label>
+                <input class="neo-physis-form__input" type="email" id="email" name="email" placeholder="tu@correo.edu" required autocomplete="email" />
+                <span class="neo-physis-form__feedback" aria-live="polite"></span>
+              </div>
+
+              <div class="neo-physis-form__field neo-physis-form__field--full">
+                <label class="neo-physis-form__label" for="area">Área de investigación</label>
+                <select class="neo-physis-form__input neo-physis-form__select" id="area" name="area" required>
+                  <option value="" selected>Selecciona tu área</option>
+                  <option value="biotecnologia-vegetal">Biotecnología vegetal</option>
+                  <option value="microbiologia">Microbiología</option>
+                  <option value="bioinformatica">Bioinformática</option>
+                  <option value="salud-publica">Salud pública</option>
+                  <option value="ciencias-ambientales">Ciencias ambientales</option>
+                  <option value="otra">Otra área</option>
+                </select>
+                <span class="neo-physis-form__feedback" aria-live="polite"></span>
+              </div>
+
+              <div class="neo-physis-form__field neo-physis-form__field--full">
+                <label class="neo-physis-form__label" for="message">Mensaje o propuesta</label>
+                <textarea class="neo-physis-form__input neo-physis-form__textarea" id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu artículo, proyecto o idea de colaboración" required minlength="20"></textarea>
+                <span class="neo-physis-form__feedback" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <button class="neo-physis-form__submit" type="submit">
+              Enviar propuesta científica
+            </button>
+
+            <p class="neo-physis-form__hint">Respuesta estimada en menos de 48 horas. Tus datos se usan solo para contacto académico.</p>
+            <p class="neo-physis-form__status" id="neo-physis-form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

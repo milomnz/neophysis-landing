@@ -1,0 +1,527 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1026;
+  --bg-soft: rgba(17, 24, 39, 0.76);
+  --panel: rgba(17, 24, 39, 0.78);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.76);
+  --accent: #00e5ff;
+  --accent-strong: #14ffec;
+  --accent-deep: #4ddcff;
+  --danger: #ff6b6b;
+  --success: #4dffb0;
+  --shadow: 0 24px 80px rgba(0, 229, 255, 0.14);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --transition: 220ms ease;
+  --font: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(0, 229, 255, 0.16), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(20, 255, 236, 0.1), transparent 28%),
+    linear-gradient(135deg, #070b1a 0%, #0b1026 45%, #111827 100%);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.neo-physis-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 20px;
+}
+
+.neo-physis-cta__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.neo-physis-cta__content,
+.neo-physis-form-card {
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.86), rgba(11, 16, 38, 0.92));
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+}
+
+.neo-physis-cta__content {
+  padding: 28px;
+}
+
+.neo-physis-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: rgba(0, 229, 255, 0.08);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.neo-physis-cta__title {
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.neo-physis-cta__description {
+  margin: 18px 0 0;
+  max-width: 60ch;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.neo-physis-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.neo-physis-cta__button,
+.neo-physis-form__submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+  cursor: pointer;
+}
+
+.neo-physis-cta__button::before,
+.neo-physis-form__submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.neo-physis-cta__button:hover,
+.neo-physis-cta__button:focus-visible,
+.neo-physis-form__submit:hover,
+.neo-physis-form__submit:focus-visible {
+  transform: translateY(-2px);
+}
+
+.neo-physis-cta__button:hover::before,
+.neo-physis-cta__button:focus-visible::before,
+.neo-physis-form__submit:hover::before,
+.neo-physis-form__submit:focus-visible::before {
+  opacity: 1;
+}
+
+.neo-physis-cta__button:focus-visible,
+.neo-physis-form__submit:focus-visible,
+.neo-physis-form__input:focus-visible {
+  outline: 3px solid rgba(20, 255, 236, 0.25);
+  outline-offset: 3px;
+}
+
+.neo-physis-cta__button--primary,
+.neo-physis-form__submit {
+  color: #03111d;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 18px 40px rgba(0, 229, 255, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+.neo-physis-cta__button--secondary {
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.neo-physis-cta__benefits {
+  display: grid;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.neo-physis-cta__benefit-card {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.neo-physis-cta__benefit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 229, 255, 0.28);
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.neo-physis-cta__benefit-value {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-strong);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.neo-physis-cta__benefit-text {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.neo-physis-cta__footer {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.93rem;
+}
+
+.neo-physis-form-card {
+  position: relative;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.neo-physis-form-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -8% -12% auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.28), transparent 68%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.neo-physis-form-card__header {
+  margin-bottom: 20px;
+}
+
+.neo-physis-form-card__tag {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.neo-physis-form-card__title {
+  margin: 0;
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  line-height: 1.1;
+}
+
+.neo-physis-form-card__text {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.neo-physis-form {
+  position: relative;
+  z-index: 1;
+}
+
+.neo-physis-form__grid {
+  display: grid;
+  gap: 16px;
+}
+
+.neo-physis-form__field {
+  position: relative;
+}
+
+.neo-physis-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.neo-physis-form__label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.neo-physis-form__input {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition), transform var(--transition);
+}
+
+.neo-physis-form__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.neo-physis-form__input:hover {
+  border-color: rgba(0, 229, 255, 0.32);
+}
+
+.neo-physis-form__input:focus {
+  border-color: rgba(20, 255, 236, 0.85);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.neo-physis-form__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.neo-physis-form__select {
+  appearance: none;
+  padding-right: 44px;
+  color: #e6fbff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.7) 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) calc(50% - 3px),
+    calc(100% - 16px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.neo-physis-form__select option {
+  color: #0b1026;
+  background: #ffffff;
+}
+
+.neo-physis-form__select option:first-child {
+  color: rgba(11, 16, 38, 0.62);
+}
+
+.neo-physis-form__feedback {
+  display: block;
+  min-height: 18px;
+  margin-top: 8px;
+  color: var(--danger);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.neo-physis-form__field.is-valid .neo-physis-form__input {
+  border-color: rgba(77, 255, 176, 0.55);
+  box-shadow: 0 0 0 1px rgba(77, 255, 176, 0.12) inset;
+}
+
+.neo-physis-form__field.is-invalid .neo-physis-form__input {
+  border-color: rgba(255, 107, 107, 0.7);
+  box-shadow: 0 0 0 1px rgba(255, 107, 107, 0.12) inset;
+}
+
+.neo-physis-form__submit {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.neo-physis-form__hint {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.neo-physis-form__status {
+  min-height: 24px;
+  margin: 10px 0 0;
+  font-weight: 700;
+}
+
+.neo-physis-form__status.is-success {
+  color: var(--success);
+}
+
+.neo-physis-form__status.is-error {
+  color: var(--danger);
+}
+
+.neo-physis-cta__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  pointer-events: none;
+  animation: floatGlow 10s ease-in-out infinite;
+}
+
+.neo-physis-cta__orb--one {
+  top: 32px;
+  right: -18px;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.22), transparent 70%);
+}
+
+.neo-physis-cta__orb--two {
+  bottom: 24px;
+  left: -28px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(20, 255, 236, 0.14), transparent 70%);
+  animation-delay: -4s;
+}
+
+.neo-physis-cta__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 88%);
+  opacity: 0.35;
+}
+
+.neo-physis-cta,
+.neo-physis-cta__content,
+.neo-physis-form-card {
+  animation: fadeInUp 900ms ease both;
+}
+
+.neo-physis-cta__content {
+  animation-delay: 120ms;
+}
+
+.neo-physis-form-card {
+  animation-delay: 240ms;
+}
+
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.04);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .neo-physis-cta {
+    padding: 96px 32px;
+  }
+
+  .neo-physis-cta__container {
+    gap: 28px;
+  }
+
+  .neo-physis-cta__content {
+    padding: 36px;
+  }
+
+  .neo-physis-cta__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .neo-physis-cta__benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .neo-physis-form-card {
+    padding: 32px;
+  }
+
+  .neo-physis-form__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .neo-physis-cta__container {
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: start;
+  }
+
+  .neo-physis-cta__content {
+    padding: 44px;
+  }
+
+  .neo-physis-form-card {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
