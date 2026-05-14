@@ -75,3 +75,36 @@ form.addEventListener('submit', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.neo-physis-cta')?.classList.add('is-ready');
 });
+
+/* ======================================
+   VALORES Y BENEFICIOS - INTERACTIVIDAD
+   ====================================== */
+
+// Animación de entrada para cards de valores
+const elementosAnimados = document.querySelectorAll('.valores__card, .beneficios');
+
+const mostrarElemento = new IntersectionObserver(
+  (entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+  }
+);
+
+elementosAnimados.forEach((elemento) => {
+  mostrarElemento.observe(elemento);
+});
+
+// Interactividad de botones de beneficios
+const beneficios = document.querySelectorAll('.beneficios__item');
+
+beneficios.forEach((beneficio) => {
+  beneficio.addEventListener('click', () => {
+    beneficio.classList.toggle('activo');
+  });
+});
