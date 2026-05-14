@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar y Footer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Navegación principal">
+        <div class="navbar__brand">
+          <a href="#inicio">
+            <img src="logo/Logo2.png" alt="Logotipo" class="navbar__logo" />
+          </a>
+        </div>
+        <button class="navbar__toggle" aria-controls="navbar-menu" aria-expanded="false" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="navbar__menu" id="navbar-menu">
+          <ul class="navbar__list">
+            <li class="navbar__item"><a href="#inicio" class="navbar__link">Inicio</a></li>
+            <li class="navbar__item"><a href="#servicios" class="navbar__link">Servicios</a></li>
+            <li class="navbar__item"><a href="#nosotros" class="navbar__link">Nosotros</a></li>
+            <li class="navbar__item"><a href="#contacto" class="navbar__link">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main></main>
+    <footer class="site-footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Proyecto</p>
+          <p class="footer__brand-text">Diseño moderno y navegación clara.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Enlaces de pie de página">
+          <p class="footer__title">Enlaces</p>
+          <ul class="footer__links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <p class="footer__title">Contacto</p>
+          <p class="footer__text">info@proyecto.com</p>
+          <p class="footer__text">+00 000 000 000</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
