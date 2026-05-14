@@ -36,6 +36,30 @@ La sección formulario (`<form class="neo-physis-form">`) incluye:
 - **Feedback visual**: Mensajes de error y success con colores diferenciados
 - **Accesibilidad**: aria-live, labels asociados, focus states visibles
 
+### Sección de Valores y Beneficios
+La sección de valores y beneficios (`<section class="valores">`) presenta:
+- **Encabezado atractivo**: Etiqueta "Valores y beneficios", título principal y descripción contextual
+- **Cards de valores (4 items)**:
+  - 🔬 Rigor científico
+  - 🤝 Colaboración
+  - 🌱 Impacto regional
+  - 💡 Innovación abierta
+- **Botones interactivos de beneficios (4 items)**:
+  - Sistema accordion con expand/collapse
+  - Descripción detallada de cada beneficio
+  - Animación suave al abrir/cerrar
+- **Efectos visuales**:
+  - Grid responsivo (4 columnas en desktop, 2 en tablet, 1 en mobile)
+  - Hover effects con transformación y cambio de color
+  - Animaciones de entrada con IntersectionObserver
+  - Brillos flotantes y cuadrícula de fondo tecnológica
+
+**Características técnicas:**
+- Intersection Observer para animaciones al hacer scroll
+- Toggle dinámico de estado activo en beneficios
+- Grid responsivo que se adapta a todos los breakpoints
+- Animación `valoresFloatGlow` continua en el fondo
+
 ## Sustentación
 
 ### 1. Arquitectura CSS
@@ -45,6 +69,8 @@ La sección formulario (`<form class="neo-physis-form">`) incluye:
 - **Sección Héroe**: `.neo-physis-hero` con elementos como `__logo-wrapper`, `__main-title`, `__button--primary/secondary`
 - **Sección CTA**: `.neo-physis-cta` con elementos como `__content`, `__title`, `__benefit-card`
 - **Sección Formulario**: `.neo-physis-form` con elementos como `__input`, `__label`, `__feedback`, `__submit`
+- **Sección Valores**: `.valores` con bloques como `__card`, `__bloque`, `__grid` y modificadores `--visible`
+- **Sección Beneficios**: `.beneficios` con botones `.beneficios__item` y modificadores `--activo` para estado expandido
 
 ### 2. Organización de estilos
 - Los estilos se agruparon por **componente principal**: Héroe, CTA, beneficios, formulario y estado visual.
@@ -129,14 +155,16 @@ La sección formulario (`<form class="neo-physis-form">`) incluye:
 ### Visualizar la página
 Abre `index.html` en el navegador para ver la landing page completa con:
 1. **Sección Héroe** (encabezado con logo y propuesta de valor)
-2. **Sección CTA** (propuesta detallada con beneficios)
+2. **Sección CTA** (propuesta detallada con beneficios rápidos)
 3. **Sección Formulario** (registro interactivo)
+4. **Sección Valores y Beneficios** (detalle de la propuesta de valor con cards interactivas)
 
 ### Integrar componentes
 Puedes integrar **componentes individuales** en otros proyectos:
 - **Solo héroe**: Copia el bloque `<header class="neo-physis-hero">` + estilos `.neo-physis-hero`
 - **Solo CTA**: Copia el bloque `<section class="neo-physis-cta">` + estilos `.neo-physis-cta`
 - **Solo formulario**: Copia el `<form class="neo-physis-form">` + estilos `.neo-physis-form`
+- **Solo valores y beneficios**: Copia el bloque `<section class="valores">` + estilos `.valores` y `.beneficios` + lógica de interactividad
 
 ### Personalizar
 Las variables CSS en `:root` permiten personalizar fácilmente:
